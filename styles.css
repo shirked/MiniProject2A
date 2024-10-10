@@ -225,3 +225,63 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Contact Us Section */
+.contact-us {
+    background-color: #1c1c1c; /* Same background color as Home */
+    color: #f1c40f; /* Default text color */
+    padding: 60px 20px;
+    text-align: center; /* Center text */
+}
+
+.contact-us h2 {
+    font-size: 2.5rem; /* Adjust the size of the heading */
+    margin-bottom: 40px; /* Space below the heading */
+}
+
+.contact-info {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.contact-item {
+    position: relative; /* For positioning */
+    padding: 20px; /* Add padding inside the feature item */
+    border-radius: 15px; /* Curved corners */
+    border: 2px solid rgba(241, 196, 15, 1); /* Gold border */
+    background-color: rgba(28, 28, 28, 0.8); /* Slightly darker background for visibility */
+    max-width: 300px; /* Limit width */
+    margin: 20px; /* Add margin for spacing */
+    text-align: center; /* Center text */
+    z-index: 1; /* Ensure this is above any background elements */
+    color: #f1c40f; /* Gold color for text */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+}
+
+.contact-item:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    border-color: rgba(255, 20, 147, 1); /* Change border color to dark pink on hover */
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.8), 0 0 20px rgba(255, 20, 147, 0.4); /* Dark pink glow effect */
+}
+
+/* Adjust heading style */
+.contact-item h3 {
+    color: #f1c40f; /* Keep headings gold */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.contact-item:hover h3 {
+    color: #ff1493; /* Change heading color to dark pink on hover */
+}
+
+/* Adjust paragraph style */
+.contact-item p {
+    color: #f1c40f; /* Gold color for text */
+    font-size: 1.2rem; /* Text size */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+.contact-item:hover p {
+    color: #ff1493; /* Change paragraph color to dark pink on hover */
+}
