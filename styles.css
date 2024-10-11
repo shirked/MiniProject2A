@@ -72,51 +72,68 @@ nav {
     margin-bottom: 40px;
 }
 
+.intro h2, .intro p {
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
 .button-container {
     margin-top: 40px; /* Increased space between the buttons and the main text */
     text-align: center; /* Center align buttons */
 }
 
-.action-btn {
-    background-color: #f1c40f;
+/* Button Styles */
+.button {
+    background-color: #f1c40f; /* Gold background */
     color: black;
     padding: 15px 30px;
     text-decoration: none;
-    border: 2px solid gold; /* Gold border to fit the theme */
+    border: 2px solid gold;
     border-radius: 25px;
     cursor: pointer;
-    margin: 40px; /* Increased margin between buttons */
-    position: relative; /* Important for pseudo-element positioning */
-    overflow: hidden; /* Ensures nothing overflows */
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
 }
 
-.action-btn:hover {
+/* Login Button Styles */
+.login-btn {
+    background-color: gold;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 2px solid gold; /* Gold border */
+    margin-right: 80px;
+    text-decoration: none;
+    color: black
+}
+
+/* Login Button Hover Effect */
+.login-btn:hover {
     background-color: #d4ac0d; /* Darker shade of gold */
-    transform: scale(1.1); /* Scale the button by 10% */
-    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8); /* Glittery glow */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8);
 }
 
-.action-btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px; /* Match button's border-radius */
-    border: 2px solid transparent;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
-                0 0 10px rgba(255, 255, 255, 0.3), 
-                0 0 15px rgba(255, 215, 0, 0.5), 
-                0 0 20px rgba(255, 215, 0, 0.8);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none; /* Ensures this pseudo-element doesn't interfere with clicking */
+/* Register Button Styles */
+.register-btn {
+    background-color: gold;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 2px solid gold; /* Gold border */
+    margin-left: 80px;
+    text-decoration: none;
+    color: black
 }
 
-.action-btn:hover::after {
-    opacity: 1; /* Glitter effect appears on hover */
+/* Register Button Hover Effect */
+.register-btn:hover {
+    background-color: #d4ac0d; /* Darker shade of gold */
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8);
 }
 
 /* About Us Section */
@@ -174,9 +191,10 @@ nav {
 
 /* Glow effect on hover with dark pink */
 .feature-item:hover {
-    border: 3px solid rgba(0, 255, 255, 0.8); /* Cyan border on hover */
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6); /* Increased cyan glow */
-    transform: scale(1.05); /* Scale the whole feature item by 5% */
+    border: 3px solid rgba(0, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6);
+    transform: scale(1.1); /* Increased scaling for more impact */
+    transition: box-shadow 0.2s ease, border 0.2s ease, transform 0.2s ease;
 }
 
 /* Change text size and color on hover */
@@ -226,62 +244,265 @@ footer {
     width: 100%;
 }
 
-/* Contact Us Section */
 .contact-us {
-    background-color: #1c1c1c; /* Same background color as Home */
-    color: #f1c40f; /* Default text color */
-    padding: 60px 20px;
-    text-align: center; /* Center text */
-}
-
-.contact-us h2 {
-    font-size: 2.5rem; /* Adjust the size of the heading */
-    margin-bottom: 40px; /* Space below the heading */
+    padding: 20px;
+    background-color: #121212; /* Dark background for uniformity */
+    color: #FFD700; /* Gold text for contrast */
 }
 
 .contact-info {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: center; /* Center the items horizontally */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out items evenly */
+    margin-bottom: 30px; /* Increase space below contact info */
 }
 
 .contact-item {
-    position: relative; /* For positioning */
-    padding: 20px; /* Add padding inside the feature item */
-    border-radius: 15px; /* Curved corners */
-    border: 2px solid rgba(241, 196, 15, 1); /* Gold border */
-    background-color: rgba(28, 28, 28, 0.8); /* Slightly darker background for visibility */
-    max-width: 300px; /* Limit width */
-    margin: 20px; /* Add margin for spacing */
-    text-align: center; /* Center text */
-    z-index: 1; /* Ensure this is above any background elements */
-    color: #f1c40f; /* Gold color for text */
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transition for effects */
+    flex: 1; /* Allow items to grow equally */
+    padding: 15px;
+    background-color: #1a1a1a; /* Dark card background */
+    margin: 0 15px; /* Increase space between items */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.contact-item:hover {
-    transform: scale(1.1); /* Slightly increase size on hover */
-    border-color: rgba(255, 20, 147, 1); /* Change border color to dark pink on hover */
-    box-shadow: 0 0 10px rgba(255, 20, 147, 0.8), 0 0 20px rgba(255, 20, 147, 0.4); /* Dark pink glow effect */
-}
-
-/* Adjust heading style */
 .contact-item h3 {
-    color: #f1c40f; /* Keep headings gold */
-    transition: color 0.3s ease; /* Transition for color change */
+    margin: 0 0 10px;
+    color: #FFD700; /* Gold color for headings */
 }
 
-.contact-item:hover h3 {
-    color: #ff1493; /* Change heading color to dark pink on hover */
+.feedback-section {
+    margin-top: 30px; /* Increase space above feedback section */
+    padding: 15px;
+    background-color: #1a1a1a; /* Dark card background */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Adjust paragraph style */
-.contact-item p {
-    color: #f1c40f; /* Gold color for text */
-    font-size: 1.2rem; /* Text size */
-    transition: color 0.3s ease; /* Transition for color change */
+.feedback-section h3 {
+    margin-bottom: 10px;
+    color: #FFD700; /* Gold color for feedback heading */
 }
 
-.contact-item:hover p {
-    color: #ff1493; /* Change paragraph color to dark pink on hover */
+#feedback {
+    width: 100%; /* Full width for textarea */
+    padding: 10px;
+    border: 1px solid #FFD700; /* Gold border */
+    border-radius: 5px;
+    background-color: #2a2a2a; /* Slightly lighter dark background */
+    color: #ffffff; /* White text for readability */
+    margin-bottom: 10px; /* Space below textarea */
+}
+
+#feedback::placeholder {
+    color: #999; /* Light grey for placeholder text */
+}
+
+.action-btn {
+    background-color: #FFD700; /* Gold background for button */
+    color: #121212; /* Dark text for contrast */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #ca0bfa; /* Change button color on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+.decorative-line {
+    height: 2px; /* Height of the decorative line */
+    background-color: #FFD700; /* Gold color for the line */
+    margin: 30px 0; /* Space above and below the line */
+}
+
+.engagement-text {
+    margin-bottom: 30px; /* Space below the engagement text */
+    color: #FFD700; /* Gold text for engagement */
+    text-align: center; /* Center the engagement text */
+    font-size: 18px; /* Slightly larger font size */
+}
+
+
+/* Schedules Section */
+.schedules {
+    text-align: center;
+    padding: 60px;
+    background-color: #1c1c1c; /* Dark background */
+    color: #f1c40f; /* Gold text */
+}
+
+.schedules h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #f1c40f;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.input-box {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-box label {
+    font-size: 1.2rem;
+    color: #f1c40f;
+}
+
+.input-box input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: 2px solid #f1c40f;
+    border-radius: 25px;
+    background-color: #282828;
+    color: #f1c40f;
+}
+
+#search-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #f1c40f;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative; /* Important for pseudo-element positioning */
+    overflow: hidden; /* Ensures nothing overflows */
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
+    border: 2px solid gold; /* Gold border for consistency */
+}
+
+#search-btn:hover {
+    background-color: #d4ac0d; /* Darker shade of gold */
+    transform: scale(1.1); /* Scale the button by 10% */
+    box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8); /* Same glow as other buttons */
+}
+
+#search-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px; /* Match button's border-radius */
+    border: 2px solid transparent;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+                0 0 10px rgba(255, 255, 255, 0.3), 
+                0 0 15px rgba(255, 215, 0, 0.5), 
+                0 0 20px rgba(255, 215, 0, 0.8); /* Add glowing effect */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none; /* Ensures this pseudo-element doesn't interfere with clicking */
+}
+
+#search-btn:hover::after {
+    opacity: 1; /* Show glow effect on hover */
+}
+
+/* Train Table */
+.results-container {
+    margin-top: 30px;
+    display: none; /* Initially hidden */
+}
+
+.train-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #f1c40f;
+    font-size: 1.1rem;
+}
+
+.train-table th, .train-table td {
+    padding: 12px;
+    border: 1px solid #f1c40f;
+    text-align: center;
+}
+
+.train-table th {
+    background-color: #282828;
+    font-weight: bold;
+}
+
+.train-table td {
+    background-color: #1c1c1c;
+}
+
+.train-table tbody tr:hover {
+    background-color: #f1c40f;
+    color:rgb(22, 252, 14);
+    transform: scale(1.02); /* Slight scaling for emphasis */
+    transition: 0.2s ease; /* Faster transition */
+}
+
+.discounts-offers {
+    padding: 20px;
+    background-color: #121212; /* Dark background for uniformity */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    color: #FFD700; /* Gold text for contrast */
+}
+
+.discounts-offers h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFD700; /* Gold color for headings */
+}
+
+.offer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.offer-list li {
+    padding: 15px;
+    background-color: #1a1a1a; /* Darker card background */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid transparent; /* Transparent border for transition */
+    color: #ffffff; /* Default text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.offer-list li:hover {
+    border-color: #d3d3d3; /* Change border to gold on hover */
+    color: #d3d3d3; /* Change text color to gold on hover */
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+/* Ensure all text within the list item inherits the color change */
+.offer-list li * {
+    transition: color 0.3s ease; /* Smooth transition for child elements */
+}
+
+
+.offer-list h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #FFD700; /* Gold color for offer titles */
+}
+
+.offer-list p {
+    margin: 0;
+    color: #FFD700; /* Gold color for offer descriptions */
+}
+
+.offer-list li:hover h3, .offer-list li:hover p {
+    color: #d3d3d3; /* Change text color to gold on hover */
 }
