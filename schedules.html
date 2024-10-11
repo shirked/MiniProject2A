@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Schedules</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header id = "home">
+        <nav>
+            <div class="logo">
+                <h1>RailRes</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Book Tickets</a></li>
+                <li><a href="schedules.html">Schedules</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Schedules section starts -->
+    <section class="schedules">
+        <h2>Find Your Train</h2>
+        <div class="search-container">
+            <div class="input-box">
+                <label for="train-number">Train Number</label>
+                <input type="text" id="train-number" placeholder="Enter Train Number">
+            </div>
+            <div class="input-box">
+                <label for="train-name">Train Name</label>
+                <input type="text" id="train-name" placeholder="Enter Train Name">
+            </div>
+            <div class="input-box">
+                <label for="train-source">Source Station</label>
+                <input type="text" id="train-source" placeholder="Enter Source Station">
+            </div>
+            <div class="input-box">
+                <label for="train-destination">Destination Station</label>
+                <input type="text" id="train-destination" placeholder="Enter Destination Station">
+            </div>
+            <button id="search-btn">Find Train</button>
+        </div>
+
+        <!-- Table to display train information -->
+        <div id="train-results" class="results-container">
+            <table id="train-table" class="train-table">
+                <thead>
+                    <tr>
+                        <th>Train Number</th>
+                        <th>Train Name</th>
+                        <th>Source</th>
+                        <th>Destination</th>
+                        <th>Journey Begins</th>
+                        <th>Journey Ends</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Table rows will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 RailRes. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
