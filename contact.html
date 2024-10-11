@@ -6,18 +6,127 @@
     <title>Contact Us - Railway Reservation System</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Add the hover effect for contact information */
+        .hover-effect {
+            transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+            color: #ffffff; /* Default text color */
+            position: relative; /* Positioning context for glow */
+        }
+
+        .contact-info {
+            display: flex; /* Use flexbox for horizontal alignment */
+            justify-content: space-between; /* Space out items evenly */
+            margin-bottom: 40px; /* Space between contact info and feedback section */
+        }
+
+        .contact-item {
+            border: 2px solid transparent; /* Keep transparent border */
+            transition: border-color 0.3s ease; /* Smooth transition for border color */
+            padding: 20px; /* Padding for contact items */
+            border-radius: 5px; /* Rounded corners for contact items */
+            background-color: rgba(26, 26, 26, 0.8); /* Slightly lighter background */
+            flex: 1; /* Make each item take equal space */
+            margin: 0 10px; /* Horizontal margin for space between items */
+        }
+
+        .contact-item:hover {
+            border-color: rgba(255, 182, 193, 0.8); /* Light pink border on hover */
+            box-shadow: 0 0 10px rgba(255, 182, 193, 0.8); /* Light pink glow effect */
+        }
+
+        /* Style for the feedback section */
+        .feedback-section {
+            background-color: #1a1a1a; /* Consistent dark background */
+            padding: 20px; /* Padding inside the feedback section */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .feedback-section h3 {
+            margin-bottom: 15px;
+            color: #FFD700; /* Gold color for headings */
+        }
+
+        .feedback-section textarea {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #ca0bfa; /* Border in magenta */
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* White text */
+            margin-bottom: 10px;
+        }
+
+        /* Submit Feedback Button Styles */
+        .feedback-btn {
+            background-color: #f1c40f;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            border: 2px solid gold; /* Gold border to fit the theme */
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 40px; /* Increased margin between buttons */
+            position: relative; /* Important for pseudo-element positioning */
+            overflow: hidden; /* Ensures nothing overflows */
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.5s ease;
+        }
+
+        .feedback-btn:hover {
+            background-color: #d4ac0d;
+            transform: scale(1.1) translateY(-5px); /* Slight upward movement */
+            box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.8);
+        }
+
+        .feedback-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px; /* Match button's border-radius */
+            border: 2px solid transparent;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+                        0 0 10px rgba(255, 255, 255, 0.3), 
+                        0 0 15px rgba(255, 215, 0, 0.5), 
+                        0 0 20px rgba(255, 215, 0, 0.8);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none; /* Ensures this pseudo-element doesn't interfere with clicking */
+        }
+
+        .feedback-btn:hover::after {
+            opacity: 1; /* Glitter effect appears on hover */
+        }
+
+        /* Style for the decorative line */
+        .decorative-line {
+            height: 2px;
+            background-color: #FFD700; /* Gold color */
+            margin: 20px 0; /* Spacing above and below */
+        }
+
+        /* Additional styles to reduce overall section height */
+        .contact-us {
+            padding: 40px 20px; /* Padding for the contact section */
+            margin-bottom: 40px; /* Spacing below the contact section */
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header id="home">
         <nav>
             <div class="logo">
                 <h1>RailRes</h1>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li> <!-- Updated link to Home -->
-                <li><a href="#">Book Tickets</a></li>
-                <li><a href="#">Schedules</a></li>
-                <li><a href="contact.html">Contact Us</a></li> <!-- Updated link to Contact Us -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="schedules.html">Schedules</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -27,19 +136,29 @@
         <div class="contact-info">
             <div class="contact-item">
                 <h3>Helpline Number</h3>
-                <p>+1234567890</p>
+                <p class="hover-effect">+1234567890</p>
             </div>
             <div class="contact-item">
                 <h3>Email</h3>
-                <p>info@example.com</p>
+                <p class="hover-effect">info@example.com</p>
             </div>
             <div class="contact-item">
                 <h3>Location</h3>
-                <p>Your Address Here</p>
+                <p class="hover-effect">Your Address Here</p>
             </div>
         </div>
+
+        <!-- Decorative Line -->
+        <div class="decorative-line"></div>
+
+        <p class="engagement-text">We value your feedback! Please let us know how we can improve your experience.</p>
+
+        <div class="feedback-section">
+            <h3>Feedback</h3>
+            <textarea id="feedback" placeholder="Your feedback here..."></textarea>
+            <button class="feedback-btn">Submit Feedback</button> <!-- Button with glitter effect -->
+        </div>
     </section>
-    
 
     <footer>
         <p>© 2024 RailRes. All rights reserved.</p>
